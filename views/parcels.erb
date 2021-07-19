@@ -1,0 +1,31 @@
+<h1>Pack it in</h1>
+
+<h3>Available Parcels</h3>
+
+<% if @parcels.any? %>
+  <ul>
+      <% @parcels.each do |parcel| %>
+    <li><a href="/parcels/<%= parcel.id %>"><%= parcel.id %></a></li>
+  <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no records to display.</p>
+<% end %>
+
+<a href="/parcels/new">Add a new parcel</a>
+
+<h1>Add a New Parcel</h1>
+
+<form action="/parcels" method="post">
+  <div class="form-group">
+    <label for="height">Height</label>
+    <input id="height" name="height" class="form-control" type="number">
+    <label for="width">Width</label>
+    <input id="width" name="width" class="form-control" type="number">
+    <label for="length">Length</label>
+    <input id="length" name="length" class="form-control" type="number">
+    <label for="weight">Weight</label>
+    <input id="weight" name="weight" class="form-control" type="number">
+  </div>
+  <button type="submit" class="btn">Add Parcel!</button>
+</form>
