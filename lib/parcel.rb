@@ -34,4 +34,8 @@ class Parcel
     @length = length
     @weight = weight
   end
+
+  def delete
+    @@parcels.delete(self.id)
+  end
 end

@@ -40,6 +40,13 @@ end
 patch('/parcels/:id') do
   @parcel = Parcel.find(params[:id].to_i())
   @parcel.update(params[:height, :width, :length, :weight])
-  @parcel = Parcel.all
+  @parcels = Parcel.all
+  erb(:parcels)
+end
+
+delete('/parcels/:id') do
+  @parcel = Parcel.find(params[:id].to_i())
+  @parcel.delete()
+  @parcels = Parcel.all
   erb(:parcels)
 end

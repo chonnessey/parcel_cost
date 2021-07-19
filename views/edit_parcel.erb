@@ -1,4 +1,4 @@
-<p><a href="/albums">Return to album list</a></p>
+<p><a href="/">Return to parcel list</a></p>
 <h1>Update Parcel#: <%= @parcel.id() %></h1>
 
 
@@ -15,4 +15,12 @@
     <input id="weight" name="weight" class="form-control" type="number">
   </div>
   <button type="submit" class="btn">Update Parcel!</button>
+
+
+</form>
+
+<form action="/parcels/<%= @parcel.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete parcel</button>
 </form>
